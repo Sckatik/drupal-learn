@@ -1,5 +1,11 @@
 Drupal доступен по адресу http://localhost
 
+# Backup Для того чтобы сделать резервную копию 
+- нужно зайти в контейнер с mysql и выполнить - /usr/bin/mysqldump -u learn --password=test12 learn > backup.sql
+
+# Для восстановления - Restore
+cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
+
 # Composer template for Drupal projects
 
 [![Build Status](https://travis-ci.org/drupal-composer/drupal-project.svg?branch=9.x)](https://travis-ci.org/drupal-composer/drupal-project)

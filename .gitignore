@@ -32,4 +32,6 @@ docker/mysql/data
 /.editorconfig
 /.gitattributes
 
-/docker/nginx/logs/*
+ldocker/nginx/logs/*
+docker/nginx/logs/access.log
+backup.sql
