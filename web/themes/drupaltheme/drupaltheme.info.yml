@@ -10,7 +10,7 @@ package: 'Bootstrap'
 regions:
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
-  header: 'Top Bar'
+  header: 'Header'
   highlighted: 'Highlighted'
   help: 'Help'
   content: 'Content'
@@ -19,7 +19,11 @@ regions:
   footer: 'Footer'
   page_top: 'Page top'
   page_bottom: 'Page bottom'
-
-libraries-extend:
-  bootstrap/framework:
-    - drupaltheme/framework
+  hidden_block: 'Hidden Blocks'
+  
+libraries:
+    - drupaltheme/global-styling
+    - drupaltheme/bootstrap
+# libraries-extend:
+#   bootstrap/framework:
+#     - drupaltheme/bootstrap

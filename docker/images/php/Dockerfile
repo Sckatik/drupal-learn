@@ -1,13 +1,24 @@
 FROM php:7.4-fpm
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        wget\
+        curl\
+        zip \
+        libzip-dev\
+        git \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-configure zip \
+    && docker-php-ext-install zip \
     && docker-php-ext-install opcache mysqli pdo_mysql \
     && rm -rf /var/lib/apt/lists/*
+
+# RUN apk add --no-cache zip libzip-dev
+# RUN docker-php-ext-configure zip
+# RUN docker-php-ext-install zip
 
 
 # Для начала указываем исходный образ, он будет использован как основа

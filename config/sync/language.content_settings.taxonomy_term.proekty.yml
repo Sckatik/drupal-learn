@@ -1,0 +1,11 @@
+uuid: 8793a84e-cf89-442f-9a3e-6d930b3736c9
+langcode: ru
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.proekty
+id: taxonomy_term.proekty
+target_entity_type_id: taxonomy_term
+target_bundle: proekty
+default_langcode: site_default
+language_alterable: false

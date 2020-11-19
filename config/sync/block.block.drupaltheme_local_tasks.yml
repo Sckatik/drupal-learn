@@ -1,0 +1,22 @@
+uuid: adf38917-a898-4780-8a45-b91c996463de
+langcode: ru
+status: true
+dependencies:
+  theme:
+    - drupaltheme
+_core:
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
+id: drupaltheme_local_tasks
+theme: drupaltheme
+region: header
+weight: 10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 53794687-9450-4540-bd5d-1d655323315f
+langcode: ru
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.proekty
+  module:
+    - text
+id: taxonomy_term.proekty.default
+targetEntityType: taxonomy_term
+bundle: proekty
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

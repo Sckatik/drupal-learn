@@ -1,0 +1,23 @@
+uuid: fe88ba26-ba20-4cf3-88e6-5025b2588f33
+langcode: ru
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - drupaltheme
+_core:
+  default_config_hash: F3d5hyAFunLh4PhGviJF019fHn1Z3_zy5gzsQ0tX1K0
+id: drupaltheme_search
+theme: drupaltheme
+region: hidden_block
+weight: -6
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: ''
+visibility: {  }

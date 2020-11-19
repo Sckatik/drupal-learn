@@ -42,14 +42,14 @@ services:
          - ./docker/mysql/data:/var/lib/mysql # persist data even
       ports:
          - "3306:3306"
-    drupal-learn-adminer:
-      container_name: "drupal-learn-adminer"
-      image: wodby/adminer:4-3.12.1
-      environment:
-        # For PostgreSQL:
-        #      ADMINER_DEFAULT_DB_DRIVER: pgsql
-        ADMINER_DEFAULT_DB_HOST: drupal-learn-db
-        ADMINER_DEFAULT_DB_NAME: $MYSQL_DATABASE
+    # drupal-learn-adminer:
+    #   container_name: "drupal-learn-adminer"
+    #   image: wodby/adminer:4-3.12.1
+    #   environment:
+    #     # For PostgreSQL:
+    #     #      ADMINER_DEFAULT_DB_DRIVER: pgsql
+    #     ADMINER_DEFAULT_DB_HOST: drupal-learn-db
+    #     ADMINER_DEFAULT_DB_NAME: $MYSQL_DATABASE
 
 
 
