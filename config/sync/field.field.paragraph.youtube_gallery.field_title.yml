@@ -1,0 +1,19 @@
+uuid: f849a6c0-899b-4cb2-bdb2-1a032c47f4a5
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.youtube_gallery
+id: paragraph.youtube_gallery.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: youtube_gallery
+label: Заголовок
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
