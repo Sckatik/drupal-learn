@@ -1,8 +1,0 @@
-{
-  "name": "drupal/dlog_vue",
-  "type": "drupal-custom-module",
-  "description": "Vue.js integration",
-  "require": {
-    "npm-asset/vue": "^2"
-  }
-}

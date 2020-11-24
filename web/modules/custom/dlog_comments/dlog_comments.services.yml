@@ -1,3 +1,0 @@
-services:
-  dlog_comments.letter_avatar:
-    class: 'Drupal\dlog_comments\Service\LetterAvatar'
