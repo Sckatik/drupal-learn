@@ -1,0 +1,11 @@
+uuid: 171468a9-e41c-4001-b09f-1e72c507a952
+langcode: ru
+status: true
+dependencies:
+  config:
+    - node.type.blog_article
+id: node.blog_article
+target_entity_type_id: node
+target_bundle: blog_article
+default_langcode: site_default
+language_alterable: false

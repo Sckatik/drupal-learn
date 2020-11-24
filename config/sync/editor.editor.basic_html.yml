@@ -1,33 +1,53 @@
-uuid: 055991b3-b89d-4cb7-8c82-410cc27a8632
+uuid: 0ce74dae-0a71-4549-a7a6-035922d9366b
 langcode: ru
 status: true
 dependencies:
   config:
     - filter.format.basic_html
   module:
-    - codemirror_editor
+    - ckeditor
 format: basic_html
-editor: codemirror_editor
+editor: ckeditor
 settings:
-  mode: text/html
-  toolbar: true
-  buttons:
-    - bold
-    - italic
-    - underline
-    - strike-through
-    - list-numbered
-    - list-bullet
-    - link
-    - horizontal-rule
-    - undo
-    - redo
-    - clear-formatting
-    - enlarge
-    - shrink
-  lineWrapping: false
-  lineNumbers: false
-  foldGutter: false
-  autoCloseTags: true
-  styleActiveLine: false
-image_upload: {  }
+  toolbar:
+    rows:
+      -
+        -
+          name: Форматирование
+          items:
+            - Bold
+            - Italic
+        -
+          name: Ссылки
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Списки
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Мультимедиа
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Source
+  plugins:
+    stylescombo:
+      styles: ''
+    language:
+      language_list: un
+    snippet_manager_snippet:
+      snippets: {  }
+image_upload:
+  status: false
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

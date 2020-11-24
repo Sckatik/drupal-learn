@@ -1,36 +1,37 @@
 version: "3"
 services:
 
-    drupal-learn:
-      # используем последний стабильный образ nginx
-      image: nginx:latest
-      # маршрутизируем порты
-      ports:
-          - "80:80"
-          - "443:443"
-      # монтируем директории, слева директории на основной машине, справа - куда они монтируются в контейнере
-      volumes:
-          - ./docker/nginx/hosts:/etc/nginx/conf.d
-          - ./:/var/www
-          - ./docker/nginx/logs:/var/log/nginx
-      # nginx должен общаться с php контейнером
-      links:
-          - drupal-learn-php
+    # drupal-learn:
+    #   # используем последний стабильный образ nginx
+    #   image: nginx:latest
+    #   # маршрутизируем порты
+    #   ports:
+    #       - "80:80"
+    #       - "443:443"
+    #   # монтируем директории, слева директории на основной машине, справа - куда они монтируются в контейнере
+    #   volumes:
+    #       - ./docker/nginx/hosts:/etc/nginx/conf.d
+    #       - ./:/var/www
+    #       - ./docker/nginx/logs:/var/log/nginx
+    #   # nginx должен общаться с php контейнером
+    #   links:
+    #       - drupal-learn-php
 
-    drupal-learn-php:
-      # у нас свой образ для PHP, указываем путь к нему и говорим что его надо собрать
-      build:
-        context: .
-        dockerfile: ./docker/images/php/Dockerfile
-      # этот образ будет общаться с mysql
-      links:
-        -  drupal-learn-db
-      # монтируем директорию с проектами
-      volumes:
-        - ./:/var/www
+    # drupal-learn-php:
+    #   # у нас свой образ для PHP, указываем путь к нему и говорим что его надо собрать
+    #   build:
+    #     context: .
+    #     dockerfile: ./docker/images/php/Dockerfile
+    #   # этот образ будет общаться с mysql
+    #   # links:
+    #   #   -  drupal-learn-db
+    #   # монтируем директорию с проектами
+    #   volumes:
+    #     - ./:/var/www
 
     drupal-learn-db:
-      image: wodby/mariadb:10.5-3.9.2
+      image: mysql:5.7
+      command: --innodb_use_native_aio=0
       stop_grace_period: 30s
       environment:
           MYSQL_ROOT_PASSWORD: $MYSQL_PASSWORD

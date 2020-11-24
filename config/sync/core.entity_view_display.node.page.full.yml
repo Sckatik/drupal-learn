@@ -1,31 +1,32 @@
-uuid: afee445a-c46d-4fb4-98e8-256c342091d3
+uuid: d0697605-5999-40c4-acc9-fc6e6a8746df
 langcode: ru
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.page.field_paragraphs
     - node.type.page
   module:
-    - paragraphs
+    - entity_reference_revisions
     - user
 _core:
   default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
-id: node.page.default
+id: node.page.full
 targetEntityType: node
 bundle: page
-mode: default
+mode: full
 content:
   field_paragraphs:
-    type: paragraph_summary
+    type: entity_reference_revisions_entity_view
     weight: 102
     label: above
-    settings: {  }
+    settings:
+      view_mode: default
+      link: ''
     third_party_settings: {  }
     region: content
   links:
     weight: 101
     region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   langcode: true

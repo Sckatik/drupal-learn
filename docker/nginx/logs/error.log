@@ -73,3 +73,86 @@
 #14 {main}" while reading response header from upstream, client: 172.24.0.1, server: localhost, request: "GET /admin/modules/uninstall HTTP/1.1", upstream: "fastcgi://172.24.0.3:9000", host: "localhost"
 2020/11/19 14:35:10 [error] 19#19: *74 FastCGI sent in stderr: "PHP message: Uncaught PHP Exception Symfony\Component\Routing\Exception\RouteNotFoundException: "Route "block_visibility_groups_admin.group_create" does not exist." at /var/www/web/core/lib/Drupal/Core/Routing/RouteProvider.php line 208" while reading response header from upstream, client: 172.24.0.1, server: localhost, request: "GET /admin/modules/uninstall HTTP/1.1", upstream: "fastcgi://172.24.0.3:9000", host: "localhost"
 2020/11/19 14:46:34 [error] 19#19: *90 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 172.24.0.1, server: localhost, request: "POST /admin/modules HTTP/1.1", upstream: "fastcgi://172.24.0.3:9000", host: "localhost", referrer: "http://localhost/admin/modules"
+2020/11/21 12:59:26 [error] 19#19: *1 FastCGI sent in stderr: "PHP message: PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No address associated with hostname in /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php on line 79 #0 /var/www/web/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(150): PDO->__construct('mysql:host=drup...', 'learn', 'test12', Array)
+#1 /var/www/web/core/lib/Drupal/Core/Database/Database.php(380): Drupal\Core\Database\Driver\mysql\Connection::open(Array)
+#2 /var/www/web/core/lib/Drupal/Core/Database/Database.php(169): Drupal\Core\Database\Database::openConnection('default', 'default')
+#3 [internal function]: Drupal\Core\Database\Database::getConnection('default')
+#4 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(79): call_user_func_array('Drupal\\Core\\Dat...', Array)
+#5 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'database')
+#6 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(212): Drupal\Component\DependencyInjection\Container->get('database', 1)
+#7 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(62): Drupal\Component\DependencyInjection\PhpArrayContainer->resolveServicesAndParameters(Array)
+#8 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'cache.container')
+#9 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(546): Drupal\Component\DependencyInjection\Container->get('cache.container')
+#10 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(891): Drupal\Core\DrupalKernel->getCachedContainerDefinition()
+#11 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(470): Drupal\Core\DrupalKernel->initializeContainer()
+#12 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\DrupalKernel->boo
+2020/11/21 13:01:17 [error] 19#19: *4 FastCGI sent in stderr: "PHP message: PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No address associated with hostname in /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php on line 79 #0 /var/www/web/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(150): PDO->__construct('mysql:host=drup...', 'learn', 'test12', Array)
+#1 /var/www/web/core/lib/Drupal/Core/Database/Database.php(380): Drupal\Core\Database\Driver\mysql\Connection::open(Array)
+#2 /var/www/web/core/lib/Drupal/Core/Database/Database.php(169): Drupal\Core\Database\Database::openConnection('default', 'default')
+#3 [internal function]: Drupal\Core\Database\Database::getConnection('default')
+#4 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(79): call_user_func_array('Drupal\\Core\\Dat...', Array)
+#5 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'database')
+#6 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(212): Drupal\Component\DependencyInjection\Container->get('database', 1)
+#7 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(62): Drupal\Component\DependencyInjection\PhpArrayContainer->resolveServicesAndParameters(Array)
+#8 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'cache.container')
+#9 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(546): Drupal\Component\DependencyInjection\Container->get('cache.container')
+#10 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(891): Drupal\Core\DrupalKernel->getCachedContainerDefinition()
+#11 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(470): Drupal\Core\DrupalKernel->initializeContainer()
+#12 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\DrupalKernel->boo
+2020/11/21 15:36:00 [error] 19#19: *12 FastCGI sent in stderr: "PHP message: Drupal\Core\Database\DatabaseExceptionWrapper: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'learn.cache_bootstrap' doesn't exist: INSERT INTO {cache_bootstrap} ("cid", "expire", "created", "tags", "checksum", "data", "serialized") VALUES (:db_insert_placeholder_0, :db_insert_placeholder_1, :db_insert_placeholder_2, :db_insert_placeholder_3, :db_insert_placeholder_4, :db_insert_placeholder_5, :db_insert_placeholder_6) ON DUPLICATE KEY UPDATE "cid" = VALUES("cid"), "expire" = VALUES("expire"), "created" = VALUES("created"), "tags" = VALUES("tags"), "checksum" = VALUES("checksum"), "data" = VALUES("data"), "serialized" = VALUES("serialized"); Array
+(
+    [:db_insert_placeholder_0] => hook_info
+    [:db_insert_placeholder_1] => -1
+    [:db_insert_placeholder_2] => 1605972960.617
+    [:db_insert_placeholder_3] => 
+    [:db_insert_placeholder_4] => 0
+    [:db_insert_placeholder_5] => a:0:{}
+    [:db_insert_placeholder_6] => 1
+)
+ in /var/www/web/core/lib/Drupal/Core/Extension/ModuleHandler.php on line 297 #0 /var/www/web/core/lib/Drupal/Core/Database/Connection.php(769): Drupal\Core\Database\Connection->handleQueryException(Object(PDOException), 'INSERT INTO {ca...', Array, Array)
+#1 /var/www/web/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(91): Drupal\Core\Database\Connection->query('INSERT INTO {ca...', Array, Array)
+#2 /var/www/web/core/lib/Drupal/Core/Database/Query/Upsert.php(106): Drupal\Core\Database\Driver\mysql\Connection->query('INSERT INTO {ca...', Array, Array)
+#3 /var/www/web/core/lib/Drupal/Core/Cache/DatabaseBackend.php(273): Drupal\Core\Database\Query\Upsert->execute()
+#4 /var/www/web/core/lib/Drupal/Core/Cache/DatabaseBackend.php(205): Drupal\Core\Cache\DatabaseBackend->doSetMultiple(Array)
+#5 /var/www/web/core/lib/Drupal/Core/Cache/DatabaseBackend.php(181): Drupal\Core\Cache\DatabaseBackend->setMultiple(Array)
+#6 /var/www/web/core/lib/Drupal/Core/Extension/ModuleHandler.php(297): Drupal\Core\Cache\D
+2020/11/21 16:02:56 [error] 19#19: *3 FastCGI sent in stderr: "PHP message: PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No address associated with hostname in /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php on line 79 #0 /var/www/web/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(150): PDO->__construct('mysql:host=drup...', 'learn', 'test12', Array)
+#1 /var/www/web/core/lib/Drupal/Core/Database/Database.php(380): Drupal\Core\Database\Driver\mysql\Connection::open(Array)
+#2 /var/www/web/core/lib/Drupal/Core/Database/Database.php(169): Drupal\Core\Database\Database::openConnection('default', 'default')
+#3 [internal function]: Drupal\Core\Database\Database::getConnection('default')
+#4 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(79): call_user_func_array('Drupal\\Core\\Dat...', Array)
+#5 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'database')
+#6 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(212): Drupal\Component\DependencyInjection\Container->get('database', 1)
+#7 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(62): Drupal\Component\DependencyInjection\PhpArrayContainer->resolveServicesAndParameters(Array)
+#8 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'cache.container')
+#9 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(546): Drupal\Component\DependencyInjection\Container->get('cache.container')
+#10 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(891): Drupal\Core\DrupalKernel->getCachedContainerDefinition()
+#11 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(470): Drupal\Core\DrupalKernel->initializeContainer()
+#12 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\DrupalKernel->boo
+2020/11/21 16:03:31 [error] 19#19: *7 FastCGI sent in stderr: "PHP message: PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No address associated with hostname in /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php on line 79 #0 /var/www/web/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(150): PDO->__construct('mysql:host=drup...', 'learn', 'test12', Array)
+#1 /var/www/web/core/lib/Drupal/Core/Database/Database.php(380): Drupal\Core\Database\Driver\mysql\Connection::open(Array)
+#2 /var/www/web/core/lib/Drupal/Core/Database/Database.php(169): Drupal\Core\Database\Database::openConnection('default', 'default')
+#3 [internal function]: Drupal\Core\Database\Database::getConnection('default')
+#4 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(79): call_user_func_array('Drupal\\Core\\Dat...', Array)
+#5 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'database')
+#6 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(212): Drupal\Component\DependencyInjection\Container->get('database', 1)
+#7 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(62): Drupal\Component\DependencyInjection\PhpArrayContainer->resolveServicesAndParameters(Array)
+#8 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'cache.container')
+#9 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(546): Drupal\Component\DependencyInjection\Container->get('cache.container')
+#10 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(891): Drupal\Core\DrupalKernel->getCachedContainerDefinition()
+#11 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(470): Drupal\Core\DrupalKernel->initializeContainer()
+#12 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\DrupalKernel->boo
+2020/11/21 16:05:55 [error] 19#19: *10 FastCGI sent in stderr: "PHP message: PDOException: SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed: No address associated with hostname in /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php on line 79 #0 /var/www/web/core/lib/Drupal/Core/Database/Driver/mysql/Connection.php(150): PDO->__construct('mysql:host=drup...', 'learn', 'test12', Array)
+#1 /var/www/web/core/lib/Drupal/Core/Database/Database.php(380): Drupal\Core\Database\Driver\mysql\Connection::open(Array)
+#2 /var/www/web/core/lib/Drupal/Core/Database/Database.php(169): Drupal\Core\Database\Database::openConnection('default', 'default')
+#3 [internal function]: Drupal\Core\Database\Database::getConnection('default')
+#4 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(79): call_user_func_array('Drupal\\Core\\Dat...', Array)
+#5 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'database')
+#6 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(212): Drupal\Component\DependencyInjection\Container->get('database', 1)
+#7 /var/www/web/core/lib/Drupal/Component/DependencyInjection/PhpArrayContainer.php(62): Drupal\Component\DependencyInjection\PhpArrayContainer->resolveServicesAndParameters(Array)
+#8 /var/www/web/core/lib/Drupal/Component/DependencyInjection/Container.php(171): Drupal\Component\DependencyInjection\PhpArrayContainer->createService(Array, 'cache.container')
+#9 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(546): Drupal\Component\DependencyInjection\Container->get('cache.container')
+#10 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(891): Drupal\Core\DrupalKernel->getCachedContainerDefinition()
+#11 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(470): Drupal\Core\DrupalKernel->initializeContainer()
+#12 /var/www/web/core/lib/Drupal/Core/DrupalKernel.php(704): Drupal\Core\DrupalKernel->bo
+2020/11/21 17:33:14 [error] 20#20: *32 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 172.18.0.1, server: localhost, request: "GET /user/register HTTP/1.1", upstream: "fastcgi://172.18.0.2:9000", host: "localhost", referrer: "http://localhost/user/login"
